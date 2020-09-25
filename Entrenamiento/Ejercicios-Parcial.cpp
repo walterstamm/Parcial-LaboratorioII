@@ -70,14 +70,14 @@ Entrenamiento CantidadEntrenamientos( int ID_Usuario){
 
 
 
-///No llegue con el timpo
+///No llegue con el tiempo
 /*void Punto_B(){
-///Por cada tipo de actividad, listar la cantidad de entrenamientos discriminado por perfil de usuario.*/
+///Por cada tipo de actividad, listar la cantidad de entrenamientos discriminado por perfil de usuario.
 
-/*
-int PerfilA[5]={},PerfilB[5]={},PerfilC[5]={},bandera=1,Id_Anterior;
+
+int PerfilA[5]={},PerfilB[5]={},PerfilC[5]={},cantidadArchivos;
 FILE *archivo;
-Usuarios registro;
+Usuarios *registro;
 archivo= fopen("texto.dat", "rb");
     if(archivo==NULL){
         cout<<"No se puede leer el archivo";
@@ -85,16 +85,10 @@ archivo= fopen("texto.dat", "rb");
         fclose(archivo);
         return;
     }
-
-    while(fread(&registro,sizeof(Usuarios),1,archivo)){
-        if(bandera==1){
-            Id_Anterior=registro.ID;
-            bandera=0;
-        }
+    fseek(archivo,0,SEEK_END);
+    cantidadArchivos=ftell(archivo)/sizeof(Usuarios);
+    registro=(Usuarios) malloc(sizeof(Usuarios)*cantidadArchivos);
 
 
-
-    }
-    }
-
-}*/
+}
+*/
