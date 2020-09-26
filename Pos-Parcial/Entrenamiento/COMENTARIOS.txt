@@ -1,0 +1,38 @@
+07/09/2020
+SE CONFIRGURO LA FECHA QUE SALGA BIEN Y QUE NO SEA UN DIA FUTURO.
+
+08/09/2020
+SE CONFIGURO BIEN LO QUE APAREZCAN LOS TRES MENU: PRINCIPAL, USUARIOS Y ENTRENAMIENTOS.
+
+08/09/2020
+FUNCION CARGAR USUARIOS, FALTA VALIDAR ID QUE NO ESTE EN EL ARCHIVO
+FUNCION LISTAR MUESTRA TODOS LOS USUARIOS.
+
+
+09/09/2020
+Se creo la funcion modificar_usuario, para esto se crearon varias funciones para llevarlo a cabo
+Validar_id esta valida si el id exite, booleano
+Se desarrollo la funcion buscar_usuario, se le envia  el id y devuelve la posicion dentro del archivo
+Levantar_participartes esta funcion se le envia la posicion del usuario dentro del archivo y devuelve un usuario cargado 
+en memoria 
+Dentro de la misma funcion pregunta si se quieren modificar los disitintos campos que pide el tp(peso, perfil act, apto medico)
+-----Habria que trabajar que el progrmama no devuelva apto 0 o 1 , que sea apto o no apto----
+Guardar usuario manda el registro y la posicion en la que esta dentro del archivo y lo guarda, devuleve boleano para confirmar el 
+guardado exitoso
+
+12/09/2020 HUGO lo pongo como VERSION 07
+Se arreglo la vista del menu de usurarios que aparecia una linea de prueba para mostrar
+Se agrego en el Entrenar.cpp para poner todo lo referido al menu de  entrenamiento
+Funciones: 	Cargar_Nuevo_Entrenamiento;
+		Listar_Entrenamiento_ID; Lista los entrenamiento por id de entrenameinto muestra solo 1 reg
+		Listar_Entrenamiento_Usuario; Lista por IIUSUARIO,
+		Listar_Entrenameinto; Lista todos los entrenamiento.		
+14/09/2020 Walter Version 08
+Se sumo el autonumerico para el ID DE ENTRENAMIENTO
+Ahora se puede modificar usarios pidiendo ID DE ENTRENAMIENTO
+Ya esta validado que se un usuario ya exitente, lo probe y funciona
+
+18/09/2020 Walter Version 09
+Se agrego la funcion para listar usuarios por ID , pide el ID y lista los campos del usuario 
+Se agrego la baja logica, da de baja al usuario y valida que no este dado previamente de baja 
+Se corrigio de char a bool el estado en el struct de usurarios
