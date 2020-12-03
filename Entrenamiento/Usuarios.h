@@ -37,6 +37,7 @@ bool Guardar_Usuario(Usuarios,int);///pide posicion en el archivo y guarda en el
 void Listar_Usuarios_ID();///Pide ID de usuario y lista todos los campos
 void Baja_Logica_Usuario();///Da de baja logica al usuario
 bool Valido_Perfil(char);
+int Cantidad_Usuarios();
 
 ///     FECHA
 Fecha Cargar_Fecha();

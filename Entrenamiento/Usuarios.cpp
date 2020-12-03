@@ -462,3 +462,19 @@ void Baja_Logica_Usuario(){
 
     return;
 }
+
+
+int Cantidad_Usuarios(){
+    FILE *archivo;
+    int Cantidad_Usuario;
+    archivo=fopen("texto.dat", "rb");
+    if (archivo==NULL){
+        fclose(archivo);
+        return 0;
+    }
+    fseek(archivo,0,SEEK_END);
+    Cantidad_Usuario=ftell(archivo)/sizeof(Usuarios);
+    fclose(archivo);
+    return Cantidad_Usuario;
+
+}

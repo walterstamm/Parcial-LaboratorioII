@@ -672,7 +672,7 @@
 
 1600953550 c:\users\walter\desktop\parcial laboratorio\entrenamiento\configuracion.h
 
-1600989678 c:\users\walter\desktop\parcial laboratorio\entrenamiento\usuarios.h
+1606872376 c:\users\walter\desktop\parcial laboratorio\entrenamiento\usuarios.h
 
 1600953550 source:c:\users\walter\desktop\parcial laboratorio\entrenamiento\entrenar.cpp
 	<iostream>
@@ -700,7 +700,7 @@
 	"ArchivosConfiguraciones.h"
 	"configuracion.h"
 
-1600953550 source:c:\users\walter\desktop\parcial laboratorio\entrenamiento\usuarios.cpp
+1606872376 source:c:\users\walter\desktop\parcial laboratorio\entrenamiento\usuarios.cpp
 	<ctime>
 	<cstdlib>
 	<cstdio>
@@ -709,7 +709,7 @@
 	<iostream>
 	"Usuarios.h"
 
-1600989814 source:c:\users\walter\desktop\parcial laboratorio\entrenamiento\menues.cpp
+1606959206 source:c:\users\walter\desktop\parcial laboratorio\entrenamiento\menues.cpp
 	<cstdlib>
 	<cstdio>
 	<cstring>
@@ -719,14 +719,97 @@
 	"Usuarios.h"
 	"configuracion.h"
 
-1600991270 c:\users\walter\desktop\parcial laboratorio\entrenamiento\ejercicios-parcial.h
+1606959206 c:\users\walter\desktop\parcial laboratorio\entrenamiento\ejercicios-parcial.h
 	"Usuarios.h"
 
-1600991157 source:c:\users\walter\desktop\parcial laboratorio\entrenamiento\ejercicios-parcial.cpp
+1606957514 source:c:\users\walter\desktop\parcial laboratorio\entrenamiento\ejercicios-parcial.cpp
 	<iostream>
 	<cstdlib>
+	<math.h>
 	<cstdio>
 	"Usuarios.h"
 	"configuracion.h"
 	"Ejercicios-Parcial.h"
+
+1600546068 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\archivosconfiguraciones.cpp
+	<iostream>
+	<ctime>
+	<time.h>
+	<string.h>
+	<stdlib.h>
+	"ArchivosConfiguraciones.h"
+
+1600527921 c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\archivosconfiguraciones.h
+
+1600953550 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\configuracion.cpp
+	<ctime>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<clocale>
+	<iostream>
+	"configuracion.h"
+	"ArchivosConfiguraciones.h"
+	"Usuarios.h"
+
+1600953550 c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\configuracion.h
+
+1606872376 c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\usuarios.h
+
+1606959475 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\ejercicios-parcial.cpp
+	<iostream>
+	<cstdlib>
+	<math.h>
+	<cstdio>
+	"Usuarios.h"
+	"configuracion.h"
+	"Ejercicios-Parcial.h"
+
+1606959206 c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\ejercicios-parcial.h
+	"Usuarios.h"
+
+1600953550 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\entrenar.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"Usuarios.h"
+
+1600953550 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\main.cpp
+	<ctime>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<clocale>
+	<iostream>
+	"Usuarios.h"
+	"configuracion.h"
+
+1606959206 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\menues.cpp
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<clocale>
+	<iostream>
+	"Ejercicios-Parcial.h"
+	"Usuarios.h"
+	"configuracion.h"
+
+1600989797 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\reportes.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	"usuarios.h"
+	"ArchivosConfiguraciones.h"
+	"configuracion.h"
+
+1606872376 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\usuarios.cpp
+	<ctime>
+	<cstdlib>
+	<cstdio>
+	<cstring>
+	<clocale>
+	<iostream>
+	"Usuarios.h"
 

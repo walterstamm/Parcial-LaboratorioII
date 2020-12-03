@@ -3,8 +3,7 @@
 #include "Usuarios.h"
 ///     REPORTES
 void Punto_A();
-Entrenamiento CantidadEntrenamientos( int);
-
+float Buscar_Entrenamiento_intenso(Entrenamiento *,int);
 
 
 
@@ -12,6 +11,11 @@ Entrenamiento CantidadEntrenamientos( int);
 
 
 void Punto_B();
+int TipoActividad(int);
+void CargarVector(Entrenamiento *);
 
 
+
+
+void Punto_C();
 #endif // EJERCICIOS-PARCIAL_H_INCLUDED
