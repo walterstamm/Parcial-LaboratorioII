@@ -3,19 +3,11 @@
 #include "Usuarios.h"
 ///     REPORTES
 void Punto_A();
-float Buscar_Entrenamiento_intenso(Entrenamiento *,int);
-
-
-
-
-
+bool CargarVectorUsuarios(Usuarios *);
+int TipoActividad(int);
 
 void Punto_B();
-int TipoActividad(int);
-void CargarVector(Entrenamiento *);
+float CaloriasTotales(int id);
 
 
-
-
-void Punto_C();
 #endif // EJERCICIOS-PARCIAL_H_INCLUDED

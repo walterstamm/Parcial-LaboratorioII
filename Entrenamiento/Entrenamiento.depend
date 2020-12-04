@@ -756,7 +756,7 @@
 
 1606872376 c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\usuarios.h
 
-1606959475 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\ejercicios-parcial.cpp
+1607041036 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\ejercicios-parcial.cpp
 	<iostream>
 	<cstdlib>
 	<math.h>
@@ -765,7 +765,7 @@
 	"configuracion.h"
 	"Ejercicios-Parcial.h"
 
-1606959206 c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\ejercicios-parcial.h
+1607041012 c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\ejercicios-parcial.h
 	"Usuarios.h"
 
 1600953550 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\entrenar.cpp
@@ -785,7 +785,7 @@
 	"Usuarios.h"
 	"configuracion.h"
 
-1606959206 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\menues.cpp
+1607041012 source:c:\users\walter\documents\github\parcial-laboratorioii\entrenamiento\menues.cpp
 	<cstdlib>
 	<cstdio>
 	<cstring>

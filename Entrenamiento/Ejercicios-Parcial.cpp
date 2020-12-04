@@ -7,97 +7,56 @@
 #include "Ejercicios-Parcial.h"
 
 using namespace std;
+///Para cada perfil, indicar el porcentaje de usuarios
+void Punto_A(){
 
-/*A partir de un IDUsuario que se ingresa por teclado,
-listar el entrenamiento de mayor cantidad de calorías y la fecha en que
- las registró. Si hay dos registro con misma cantidad,
- mostrar el primero de ellos.*/
-
- void Punto_A() {
-    int id;
-    float calorias;
-    Entrenamiento reg;
-    system("cls");
-    cout<<endl<<"Ingrese el ID de usuario: ";
-    cin>>id;
-    while(Validar_ID(id)==0){
-        cout<<endl<<"ID INEXISTENTE";
-        cout<<endl<<"Ingrese el ID de usuario: ";
-        cin>>id;
-    }
-
-    calorias=Buscar_Entrenamiento_intenso(&reg,id);
-    if(calorias>0){
-        mostrar_Entrenamiento(reg);
-        system("pause");
+    Usuarios *PunteroUsuarios;
+    int CantUsuarios,Perfil[3]={},i,Actividad;
+    CantUsuarios=Cantidad_Usuarios();
+    PunteroUsuarios=new Usuarios[CantUsuarios];
+    if(PunteroUsuarios==NULL){
+        cout<<"ERROR";
         return;
     }
-    else{
-            if(calorias==0){
-                cout<<endl<<"No hubo entrenamientos aun";
-                system("pause");
-            }else{
-                system("pause");
-                return;
-            }
+    if(CargarVectorUsuarios(PunteroUsuarios)==0){
+        cout<<"ERROR";
+        return;
+    }
+    for(i=0;i<CantUsuarios;i++){
+        Actividad=TipoActividad(PunteroUsuarios[i].ID);
+        if(Actividad==-1){
+            cout<<"ERROR";
+            return;
         }
+        Perfil[Actividad]++;
     }
 
+    cout<<endl<<"Perfil A: "<<(Perfil[0]*100)/(float)CantUsuarios;
+    cout<<endl<<"Perfil B: "<<(Perfil[1]*100)/(float)CantUsuarios;
+    cout<<endl<<"Perfil C: "<<(Perfil[2]*100)/(float)CantUsuarios;
 
-float Buscar_Entrenamiento_intenso(Entrenamiento *reg,int id){
-    float calorias=0;
-    Entrenamiento aux;
-    FILE *p=fopen("Entrenamiento.dat","rb");
+    delete[]PunteroUsuarios;
+    system("pause");
+}
+
+
+
+bool CargarVectorUsuarios(Usuarios *reg){
+    Usuarios aux;
+    int i=0;
+    FILE *p=fopen("texto.dat","rb");
     if(p==NULL){
         cout<<"No se puedo abrir el archivo";
-        calorias=-1;
-        return calorias;
+
+        return false ;
     }
-    while(fread(&aux,sizeof(Entrenamiento),1,p)){
-        if(aux.IDUsuario==id){
-            if(aux.Calorias>calorias){
-                calorias=aux.Calorias;
-                *reg=aux;
-            }
-        }
+    while(fread(&aux,sizeof(Usuarios),1,p)){
+        reg[i]=aux;
+        i++;
     }
     fclose(p);
-    return calorias;
+    return true;
 }
-
-void Punto_B(){
-///Por cada tipo de actividad, listar la cantidad de entrenamientos discriminado por perfil de usuario
-    int CantEntrenamientos,j,i,x,y;
-    int Tabla[5][3]={};
-    Entrenamiento *PunteroEntrenamiento;
-    CantEntrenamientos=contador_entrenamiento();
-
-    PunteroEntrenamiento=new Entrenamiento[CantEntrenamientos];
-
-
-    if(PunteroEntrenamiento==NULL){
-        cout<<"No hay memoria suficiente";
-        system("pause");
-        return;
-    }
-    CargarVector(PunteroEntrenamiento);
-    for(i=0;i<CantEntrenamientos;i++){
-
-        Tabla[PunteroEntrenamiento[i].Actividad-1][TipoActividad(PunteroEntrenamiento[i].IDUsuario)]++;
-
-    }
-
-    cout<< endl<<endl;
-    cout<<"\tA"<<"\tB"<<"\tC"<<endl;
-    for(j=0;j<5;j++){
-    cout<<j+1<<"\t"<<Tabla[j][0]<<"\t"<<Tabla[j][1]<<"\t"<<Tabla[j][2]<<endl;
-    }
-    delete[] PunteroEntrenamiento;
-    system("pause");
-
-}
-
-
 
 int TipoActividad(int idusuario){
     Usuarios reg;
@@ -124,48 +83,71 @@ int TipoActividad(int idusuario){
         }
     }
     fclose(p);
-    return -2;
+    return -1;
+}
+/*A partir de una cantidad de calorías ingresadas por teclado, listar apellidos y nombres de todos
+los usuarios que hayan quemado más calorías en total que la cantidad ingresada*/
+
+void Punto_B(){
+    Usuarios *PunteroUsuarios;
+    int i,CantUsuarios,Bandera=1;
+    float *Calorias,Cantidad;
+    CantUsuarios=Cantidad_Usuarios();
+    PunteroUsuarios=new Usuarios[CantUsuarios];
+    if(PunteroUsuarios==NULL){
+        cout<<"ERROR";
+        return;
+    }
+
+    if(CargarVectorUsuarios(PunteroUsuarios)==0){
+        cout<<"ERROR";
+        return;
+    }
+
+    Calorias=new float[CantUsuarios];
+    if(Calorias==NULL){
+        cout<<"ERROR";
+        return;
+    }
+
+    cout<<"Ingrese la cantidad de calorias: ";
+    cin>>Cantidad;
+    for(i=0;i<CantUsuarios;i++){
+        Calorias[i]=CaloriasTotales(PunteroUsuarios[i].ID);
+        if(Calorias[i]==-1){
+            cout<<"ERROR";
+            return;
+        }
+        if(Calorias[i]>Cantidad){
+            Bandera=0;
+            cout<<endl<<"Apellido: "<<PunteroUsuarios[i].Apellido;
+            cout<<endl<<"Nombre: "<<PunteroUsuarios[i].Nombres;
+            cout<<endl;
+        }
+
+    }
+    if(Bandera==1){
+        cout<<endl<<"No hay usuarios que hayan superado esa cantidad!";
+    }
+    delete[]Calorias;
+    delete[]PunteroUsuarios;
+    system("pause");
 }
 
-void CargarVector(Entrenamiento *reg){
+
+float CaloriasTotales(int id){
     Entrenamiento aux;
-    int i=0;
+    float calorias=0;
     FILE *p=fopen("Entrenamiento.dat","rb");
     if(p==NULL){
         cout<<"No se puedo abrir el archivo";
-
-        return ;
+        return -1;
     }
     while(fread(&aux,sizeof(Entrenamiento),1,p)){
-        reg[i]=aux;
-        i++;
-    }
-    fclose(p);
-}
-
-
-
-///Listar todos los entrenamientos cuyo tiempo supere el tiempo promedio.
-
-void Punto_C(){
-
-    Entrenamiento *PunteroEntrenamiento;
-    int CantEntrenamientos,i,promedio=0,media;
-
-    CantEntrenamientos=contador_entrenamiento();
-    PunteroEntrenamiento=new Entrenamiento [CantEntrenamientos];
-    CargarVector(PunteroEntrenamiento);
-
-    for(i=0;i<CantEntrenamientos;i++){
-        promedio+=PunteroEntrenamiento[i].Tiempo;
-
-    }
-    media=promedio/CantEntrenamientos;
-    for(i=0;i<CantEntrenamientos;i++){
-        if(PunteroEntrenamiento[i].Tiempo>186){
-            mostrar_Entrenamiento(PunteroEntrenamiento[i]);
-            cout<<endl<<endl;
+        if(aux.IDUsuario==id){
+            calorias+=aux.Calorias;
         }
     }
-    system("pause");
+    fclose(p);
+    return calorias;
 }

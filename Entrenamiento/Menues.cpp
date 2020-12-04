@@ -135,7 +135,6 @@ void Menu_Reportes(){
         cout<<"\n===========MEÚ REPORTES=======================";
         cout<<"\n01.- Punto A..................................";
         cout<<"\n02.- Punto B..................................";
-        cout<<"\n03.- Punto C..................................";
         cout<<"\n==============================================";
         cout<<"\n00.- VOLVER AL MENÚ PRINCIPAL.................";
         cout<<"\n==============================================";
@@ -147,9 +146,6 @@ void Menu_Reportes(){
             break;
             case 2:
                 Punto_B();
-            break;
-            case 3:
-                Punto_C();
             break;
             case 0:
                 return;
